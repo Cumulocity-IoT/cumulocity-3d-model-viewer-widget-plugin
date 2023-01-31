@@ -1,0 +1,16 @@
+td, th {
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+div.separator {
+    height: 20px;
+}
+
+.showColorPicker {
+    display: block;
+}
+
+.hideColorPicker {
+    display: none;
+}

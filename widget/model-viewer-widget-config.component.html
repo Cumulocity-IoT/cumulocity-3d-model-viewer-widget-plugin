@@ -1,0 +1,126 @@
+
+<c8y-form-group>
+
+    <!-- Model File -->
+    <label for="model-file" translate>Model file (*.dae, *.obj, *.gltf)</label>
+    <input type="text" class="form-control" [(ngModel)]="widgetInfo.binaryName" readonly />
+    <input type="file" class="form-control" name="model-file" (change)="uploadModelFile($event.target.files)" accept=".dae,model/vnd.collada+xml,.obj,.gltf" />
+    <div>{{modelFileUploadMessage}}</div>
+
+    <!-- Separator -->
+    <div class="separator"></div>
+
+    <!-- Variables -->
+    <label for="variables" translate>Variables</label>
+    <table class="table">
+        <thead>
+            <tr>
+                <th><!-- Add/Remove icon --></th>
+                <th>Name</th>
+                <th>Target</th>
+                <th>Value</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let v of widgetInfo.variables; let i = index">
+                <td>
+                    <a class="btn btn-default btn-xs rounded-pill flex-right" title="{{'Delete Variable' | translate}}" (click)="deleteVariable(i)">
+                        <i c8y-icon="minus">−</i>
+                    </a>
+                </td>
+                <td>
+                    <input class="form-control" [(ngModel)]="v.name"/>
+                </td>
+                <td>
+                    <select class="form-control" [(ngModel)]="v.target" (focus)="loadMeasurementSeries()" (change)="updateConfig()">
+                      <option [ngValue]="vt.id" *ngFor="let vt of variableTargets">{{vt.name}}</option>
+                    </select>
+                </td>
+                <td>
+                    <input class="form-control" [(ngModel)]="v.value" *ngIf="v.target === 'none'" (change)="updateConfig()" />
+                    <select class="form-control" [(ngModel)]="v.value" *ngIf="v.target === 'device'" (change)="updateConfig()">
+                        <option [ngValue]="ms" *ngFor="let ms of measurementSeries">{{ms}}</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <a class="btn btn-primary btn-xs rounded-pill flex-right" title="{{'Add Variable' | translate}}" (click)="addVariable()">
+                        <i>+</i>
+                    </a>
+                </td>
+                <td>
+                    &nbsp;
+                </td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- Separator -->
+    <div class="separator"></div>
+
+    <!-- Properties -->
+    <label for="properties" translate>Properties</label>
+    <table class="table">
+        <thead>
+            <tr>
+                <th><!-- Add/Remove icon --></th>
+                <th>Property</th>
+                <th>Expression</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let p of widgetInfo.properties; let i = index">
+                <td>
+                    <a class="btn btn-default btn-xs rounded-pill flex-right" title="{{'Delete Property' | translate}}" (click)="removeProperty(i)">
+                        <i>-</i>
+                    </a>
+                </td>
+                <td>
+                    <select class="form-control" [(ngModel)]="p.name" (change)="updateConfig()">
+                        <optgroup *ngFor="let mp of modelProperties" label="{{mp.type}}">
+                            <option [ngValue]="value.name" *ngFor="let value of mp.values">{{value.name}}</option>
+                        </optgroup>
+                    </select>
+                </td>
+                <td>
+                    <input class="form-control" type="text" [(ngModel)]="p.expression" (change)="updateConfig()" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <a class="btn btn-primary btn-xs rounded-pill flex-right" title="{{'Add Property' | translate}}" (click)="addProperty()">
+                        <i>+</i>
+                    </a>
+                </td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- Separator -->
+    <div class="separator"></div>
+
+    <div class="row">
+        <div class="col-lg-6">
+            <!-- Background Color -->
+            <label for="background-color" translate>Background color (in hex)</label>
+            <input type="text" class="form-control" name="background-color" [(ngModel)]="widgetInfo.advanced.backgroundColor" (change)="updateConfig()" (click)="openBackgroundColorPicker()" />
+            <app-color-picker [ngClass]="backgroundColorPickerClosed? 'hideColorPicker' : 'showColorPicker'" (colorPickerClosed)="closeBackgroundColorPicker()" (colorSet)="setSelectedColorForBackground($event)" ></app-color-picker>
+        </div>
+        <div class="col-lg-6">
+            <!-- Show Grid -->
+            <label for="show-grid" translate>
+                Show grid
+            </label>
+            <select class="form-control" name="show-grid" [(ngModel)]="widgetInfo.advanced.showGrid" (change)="updateConfig()">
+                <option value = "false" [selected]="widgetInfo.advanced.showGrid === 'false'">No</option>
+                <option value = "true" [selected]="widgetInfo.advanced.showGrid === 'true'">Yes</option>
+            </select>
+        </div>
+    </div>
+
+</c8y-form-group>
