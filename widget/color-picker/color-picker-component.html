@@ -1,0 +1,23 @@
+<!--<mat-radio-group aria-label="Select an option" (change) ="colorType = $event.value" >
+  <mat-radio-button   value="rgba">RGBA</mat-radio-button>
+  <mat-radio-button checked="true" value="hexa">HEXA</mat-radio-button>
+</mat-radio-group>-->
+<div class="color-wrapper">
+    <app-color-palette [hue]="hue" (color)="color = $event" ></app-color-palette> 
+    <app-color-slider
+      (color)="hue=$event"
+      style="margin-left:16px"
+    ></app-color-slider>
+    <div class = "colorPickerFooter">
+      <button class="btn btn-primary" (click)="applyColorClicked()" style="margin-bottom: 10px;">
+        Apply
+      </button>
+      <button class="btn btn-default" (click)="closeColorPicker()">
+        Close
+      </button>
+    </div>
+  </div>
+  
+
+
+  
