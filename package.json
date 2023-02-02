@@ -58,7 +58,7 @@
     "application": {
       "name": "Cumulocity 3D Model Viewer Widget Plugin",
       "description": "This 3D Model Viewer Widget help you to view 3d collada models (.dae).",
-      "contextPath": "3d-model-viewer-widget",
+      "contextPath": "c8y-3d-model-viewer-widget",
       "key": "3d-model-viewer-widget-application-key",
       "globalTitle": "This 3D Model Viewer Widget help you to view 3d collada models (.dae).",
       "tabsHorizontal": true,

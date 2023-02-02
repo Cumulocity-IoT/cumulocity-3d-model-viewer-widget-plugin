@@ -1,33 +1,54 @@
-# Cumulocity widget plugin
+# 3D Model Viewer Widget for Cumulocity [<img width="35" src="https://user-images.githubusercontent.com/32765455/211497905-561e9197-18b9-43d5-a023-071d3635f4eb.png"/>](https://github.com/SoftwareAG/cumulocity-3d-model-viewer-widget-plugin/releases/download/1.0.0-beta/c8y-3d-model-viewer-widget-1.0.0-beta.zip)
 
-This is the Cumulocity module federation plugin. Plugins can be developed like any Cumulocity application, but can be used at runtime by other applications. Therefore, they export an Angular module which can then be imported by any other application. The exports are defined in `package.json`:
+This 3D Model Viewer Widget is the Cumulocity module federation plugin created using c8ycli. This plugin can be used in Application Builder or Cockpit.
+The 3D Model Viewer widget help you to view a 3D collada model (*.dae, *.obj, *.gltf) in Cumulocity IoT.
 
-```
-"exports": [
-  {
-     "name": "Example widget plugin",
-     "module": "WidgetPluginModule",
-     "path": "./widget/widget-plugin.module.ts",
-     "description": "Adds custom widget"
-  }
-]
-```
+<img src="/assets/img-preview.png" />
 
-**How to start**
-Run the command below to scaffold a `widget` plugin.
+### Please note that this plugin is in currently under BETA mode.
 
-```
-c8ycli new <yourPluginName> widget-plugin
-```
+### Please choose 3D Model Viewer release based on Cumulocity/Application builder version:
 
-As the app.module is a typical Cumuloctiy application, any new plugin can be tested via the CLI:
+| APPLICATION BUILDER | CUMULOCITY  | 3D Model VIEWER WIDGET |
+|---------------------|-------------|------------------------|
+| 2.x.x(coming soon)  | >= 1016.x.x | 1.x.x                  | 
 
-```
-npm start -- --shell cockpit
-```
 
-In the Module Federation terminology, `widget` plugin is called `remote` and the `cokpit` is called `shell`. Modules provided by this `widget` will be loaded by the `cockpit` application at the runtime. This plugin provides a basic custom widget that can be accessed through the `Add widget` menu.
+## Prerequisite
+   Cumulocity c8ycli >=1016.x.x
+   
+### Features
+* Supports measurements from a single device
+* Allows background color customization.
+* Allows to configure realtime device measurement for model movements.
+* Allows to upload custom collada(.dae, .obj, .gltf) model file.
 
-> Note that the `--shell` flag creates a proxy to the cockpit application and provides` WidgetPluginModule` as an `remote` via URL options.
 
-Also deploying needs no special handling and can be simply done via `npm run deploy`. As soon as the application has exports it will be uploaded as a plugin.
+### Runtime Widget Deployment?
+
+* This widget support runtime deployment. Download [Runtime Binary](https://github.com/SoftwareAG/cumulocity-3d-model-viewer-widget-plugin/releases/download/1.0.0-beta/c8y-3d-model-viewer-widget-1.0.0-beta.zip) and install via Administrations(Beta mode) --> Ecosystems --> Applications --> Packages.
+
+
+## QuickStart
+This guide will teach you how to add widget in your existing or new dashboard.
+
+### Configuration - to view the 3d collada model in the widget
+1. Make sure you have successfully installed or deployed the widget.
+2. Click on `Add widget`.
+3. Choose `3d model viewer` widget.
+4. `Title` is the title of widget. Provide a relevant name. You may choose to hide this. Go to `Appearance` tab and choose `Hidden` under `Widget header style`.
+5. Select the `device`.
+6. `Model file(*.dae, *.obj, *.gltf)` is to upload the model file (*.dae, *.obj, *.gltf) into inventory binary. Please wait for it to finish the upload.
+7. `Variables` is to declare variables with a constant value or map them to the realtime device measurement series. Choose Target as None and provide the constant value or choose Target as Device and then select a measurment series.
+8. `Properties` is to define values for the model properties. You can provide a value as an mathematical expression using the variables defined earlier.
+9. `Background color (in hex)` allows you to set a custom background color using the color picker.
+10. `Show grid` allows you to show or hide the grid.
+11. Click `Save` to add the widget on the dashboard.
+12. In case you see unexpected results on the widget, refer to browser console to see if there are error logs.
+
+
+------------------------------
+
+This Widget is provided as-is and without warranty or support. They do not constitute part of the Software AG product suite. Users are free to use, fork and modify them, subject to the license agreement. While Software AG welcomes contributions, we cannot guarantee to include every contribution in the master project.
+_____________________
+For more information you can Ask a Question in the [TECH Community Forums](https://tech.forums.softwareag.com/tag/Cumulocity-IoT).
