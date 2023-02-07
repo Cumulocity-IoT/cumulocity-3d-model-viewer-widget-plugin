@@ -32,6 +32,20 @@ The 3D Model Viewer widget help you to view a 3D collada model (*.dae, *.obj, *.
 ## QuickStart
 This guide will teach you how to add widget in your existing or new dashboard.
 
+1. Open you application from App Switcher
+
+2. Add new dashboard or navigate to existing dashboard
+
+3. Click `Add Widget`
+
+4. Search for `3D Model Viewer`
+
+5. Select `Target Assets or Devices`
+
+7. Click `Save`
+
+Congratulations! 3D Model Viewer is configured.
+
 ### Configuration - to view the 3d collada model in the widget
 1. Make sure you have successfully installed or deployed the widget.
 2. Click on `Add widget`.
