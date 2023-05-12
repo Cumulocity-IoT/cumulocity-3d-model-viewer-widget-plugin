@@ -25,6 +25,7 @@ import { ColladaLoader } from 'three/examples/jsm/loaders/ColladaLoader.js';
 import { OBJLoader } from 'three/examples/jsm/loaders/OBJLoader.js';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
 import * as mathjs from 'mathjs';
+import { ResizedEvent } from 'angular-resize-event';
 
 @Component({
   selector: 'model-viewer-widget',
@@ -52,6 +53,12 @@ export class ModelViewerWidget implements OnInit, OnDestroy {
   private mixer;
   private group;
   private kinematics;
+
+  width: number;
+  height: number;
+
+  protected modelDiv: HTMLDivElement;
+  protected modelInfosDiv: HTMLDivElement;
 
   private hasDeviceMeasurements: boolean = false;
 
@@ -457,5 +464,28 @@ export class ModelViewerWidget implements OnInit, OnDestroy {
     }
 
     this.renderer.render(this.scene, this.camera);
+  }
+
+  onResized(event: ResizedEvent) {
+    if (this.camera && this.renderer) {
+      this.camera.aspect = event.newWidth / event.newHeight;
+      this.camera.updateProjectionMatrix();
+      this.renderer.setSize(event.newWidth, event.newHeight);
+      this.renderer.render(this.scene, this.camera);
+    }
+    
+  }
+
+  protected updateModelSize(w: number, h: number): void {
+    if (w > 0 && h > 0) {
+      this.width = w - 20;
+      this.height = h - this.modelInfosDiv?.offsetHeight - 10; // 10px from styling :/
+    } else {
+      this.width = this.modelDiv?.parentElement.offsetWidth - 20;
+      this.height =
+        this.modelDiv?.parentElement.offsetHeight -
+        this.modelInfosDiv?.offsetHeight -
+        10; // 10px from styling :/
+    }
   }
 }

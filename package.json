@@ -1,6 +1,6 @@
 {
   "name": "cumulocity-3d-model-viewer-widget-plugin",
-  "version": "1.0.0-beta",
+  "version": "1.0.0",
   "description": "This 3D Model Viewer Widget help you to view 3d collada models (.dae).",
   "scripts": {
     "start": "c8ycli server",
@@ -34,7 +34,8 @@
     "lodash": "4.17.20",
     "mathjs": "9.3.2",
     "three": "0.127.0",
-    "url-search-params-polyfill": "6.0.0"
+    "url-search-params-polyfill": "6.0.0",
+    "angular-resize-event": "^2.1.0"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "14.0.6",
@@ -58,8 +59,8 @@
     "application": {
       "name": "Cumulocity 3D Model Viewer Widget Plugin",
       "description": "This 3D Model Viewer Widget help you to view 3d collada models (.dae).",
-      "contextPath": "c8y-3d-model-viewer-widget",
-      "key": "3d-model-viewer-widget-application-key",
+      "contextPath": "sag-ps-pkg-c8y-3d-model-viewer-widget",
+      "key": "sag-ps-pkg-3d-model-viewer-widget-application-key",
       "globalTitle": "This 3D Model Viewer Widget help you to view 3d collada models (.dae).",
       "tabsHorizontal": true,
       "isPackage": true,

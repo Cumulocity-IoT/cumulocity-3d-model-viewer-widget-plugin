@@ -20,13 +20,15 @@ import { NgModule } from '@angular/core';
 import { CoreModule, HOOK_COMPONENTS } from '@c8y/ngx-components';
 import { ModelViewerWidget } from './model-viewer-widget.component';
 import { ModelViewerWidgetConfig } from './model-viewer-widget-config.component';
+import { AngularResizedEventModule } from 'angular-resize-event';
 import { ColorPickerComponent } from './color-picker/color-picker-component';
 import { ColorSliderComponent } from './color-picker/color-slider/color-slider-component';
 import { ColorPaletteComponent } from './color-picker/color-palette/color-palette-component';
 
 @NgModule({
   imports: [
-    CoreModule
+    CoreModule,
+    AngularResizedEventModule
   ],
   declarations: [ModelViewerWidget, ModelViewerWidgetConfig, ColorPickerComponent, ColorSliderComponent, ColorPaletteComponent],
   entryComponents: [ModelViewerWidget, ModelViewerWidgetConfig],
