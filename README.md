@@ -3,7 +3,8 @@
 This 3D Model Viewer widget is the Cumulocity module federation plugin created using c8ycli. This plugin can be used in Application Builder or Cockpit.
 The 3D Model Viewer widget help you to view a 3D collada model (*.dae, *.obj, *.gltf) in Cumulocity IoT.
 
-<img src="/assets/img-preview.png" />
+
+![Image](assets/img-preview.png)
 
 ### Please choose 3D Model Viewer release based on Cumulocity/Application builder version:
 
