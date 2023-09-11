@@ -1,6 +1,6 @@
 {
   "name": "cumulocity-3d-model-viewer-widget-plugin",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "This 3D Model Viewer Widget help you to view 3d collada models (.dae).",
   "scripts": {
     "start": "c8ycli server",
