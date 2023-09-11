@@ -1,4 +1,4 @@
-# 3D Model Viewer Widget for Cumulocity [<img width="35" src="https://user-images.githubusercontent.com/32765455/211497905-561e9197-18b9-43d5-a023-071d3635f4eb.png"/>](https://github.com/SoftwareAG/cumulocity-3d-model-viewer-widget-plugin/releases/download/1.0.0/sag-ps-pkg-c8y-3d-model-viewer-widget-1.0.0.zip)
+# 3D Model Viewer Widget for Cumulocity [<img width="35" src="https://user-images.githubusercontent.com/32765455/211497905-561e9197-18b9-43d5-a023-071d3635f4eb.png"/>](https://github.com/SoftwareAG/cumulocity-3d-model-viewer-widget-plugin/releases/download/1.0.1/sag-ps-pkg-c8y-3d-model-viewer-widget-1.0.1.zip)
 
 This 3D Model Viewer widget is the Cumulocity module federation plugin created using c8ycli. This plugin can be used in Application Builder or Cockpit.
 The 3D Model Viewer widget help you to view a 3D collada model (*.dae, *.obj, *.gltf) in Cumulocity IoT.
@@ -8,7 +8,7 @@ The 3D Model Viewer widget help you to view a 3D collada model (*.dae, *.obj, *.
 
 ### Please choose 3D Model Viewer release based on Cumulocity/Application builder version:
 
-| APPLICATION BUILDER | CUMULOCITY  | 3D Model VIEWER WIDGET |
+| APPLICATION BUILDER&nbsp;  |&nbsp;  CUMULOCITY &nbsp;  |&nbsp;  3D Model VIEWER WIDGET &nbsp; |
 |---------------------|-------------|------------------------|
 | 2.x.x  | >= 1016.x.x | 1.x.x                  | 
 
@@ -25,7 +25,7 @@ The 3D Model Viewer widget help you to view a 3D collada model (*.dae, *.obj, *.
 
 ### Runtime Widget Deployment?
 
-* This widget support runtime deployment. Download [Runtime Binary](https://github.com/SoftwareAG/cumulocity-3d-model-viewer-widget-plugin/releases/download/1.0.0/sag-ps-pkg-c8y-3d-model-viewer-widget-1.0.0.zip) and install via Administrations --> Ecosystems --> Applications --> Packages.
+* This widget support runtime deployment. Download [Runtime Binary](https://github.com/SoftwareAG/cumulocity-3d-model-viewer-widget-plugin/releases/download/1.0.1/sag-ps-pkg-c8y-3d-model-viewer-widget-1.0.1.zip) and install via Administrations --> Ecosystems --> Applications --> Packages.
 
 
 ## QuickStart
